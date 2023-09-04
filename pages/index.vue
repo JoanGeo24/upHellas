@@ -169,14 +169,14 @@
     <testimonials></testimonials>
     <v-col :class="$vuetify.breakpoint.lgAndUp ? 'pa-16' : ''" justify="center" align="center" cols="12" class="section__form" ref="contactUsSection">
       <h1 class="section__form-title">I am interested in getting the benefits of <span>Up Hellas</span></h1>
-      <v-col justify="center" align="center" class="pa-0" :cols="$vuetify.breakpoint.mdAndUp ? '8' : '11'">
+      <v-col justify="center" align="center" class="pa-0" :cols="$vuetify.breakpoint.mdAndUp ? '7' : '12'">
         <v-form
           ref="form"
           v-model="valid"
           lazy-validation
         >
-          <div class="form-group pt-16 pb-5" :class="$vuetify.breakpoint.mdAndUp ? 'mr-10' : ''">
-            <div class="form-field">
+          <div class="form-group pt-16 pb-5">
+            <v-col class="form-field" justify="center" align="left">
               <label for="fullname">Name & Surname</label>
               <v-text-field
                 id="fullname"
@@ -184,8 +184,8 @@
                 :rules="nameRules"
                 required
               ></v-text-field>
-            </div>
-            <div class="form-field">
+            </v-col>
+            <v-col class="form-field" justify="center" align="left">
               <label for="fullname">Email</label>
               <v-text-field
                 id="email"
@@ -193,10 +193,10 @@
                 :rules="emailRules"
                 required
               ></v-text-field>
-            </div>
+            </v-col>
           </div>
           <div class="form-group pb-10">
-            <div class="form-field">
+            <v-col class="form-field" justify="center" align="left">
               <label for="phone">Phone</label>
               <v-text-field
                 id="phone"
@@ -205,8 +205,8 @@
                 :counter="10"
                 required
               ></v-text-field>
-            </div>
-            <div class="form-field">
+            </v-col>
+            <v-col class="form-field" justify="center" align="left">
               <label for="product">Product</label>
               <v-select
                 id="product"
@@ -215,7 +215,7 @@
                 :rules="[v => !!v || 'Product is required']"
                 required
               ></v-select>
-            </div>
+            </v-col>
           </div>
           <div class="form-checkbox">
             <v-checkbox
@@ -577,11 +577,6 @@
     }
 
     &-field {
-      margin: 0 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
 
       label {
         color: #303644 !important;
@@ -597,7 +592,6 @@
       justify-content: center;
       align-items: center;
       margin-bottom: 40px;
-      width: 50%;
 
       label {
         color: #303644 !important;
@@ -672,16 +666,8 @@
     .form {
       &-group {
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      &-field {
-        margin: 0 20px;
-        display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        flex-wrap: wrap;
         justify-content: center;
       }
 
