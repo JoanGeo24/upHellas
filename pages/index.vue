@@ -244,7 +244,7 @@
                 min-width="auto"
               >
                 <template v-slot:activator="{ on }">
-                  <v-btn class="date-btn" v-on="on">
+                  <v-btn :disabled="!valid" class="date-btn" v-on="on">
                     <img src="../static/images/meeting-logo.svg">
                     Pick a Date
                   </v-btn>
@@ -524,8 +524,8 @@
 
       .v-input__slot {
         input {
-          max-height: 50px !important;
-          height: 50px !important;
+          max-height: 60px !important;
+          height: 60px !important;
           color: #303644;
           background-color: #ffffff;
           padding-left: 20px;
@@ -544,8 +544,8 @@
     }
 
     .v-select__slot {
-      max-height: 50px !important;
-      height: 50px !important;
+      max-height: 60px !important;
+      height: 60px !important;
       background-color: #ffffff;
       padding-left: 20px;
       font-size: 16px;
@@ -556,6 +556,7 @@
       .v-input__append-inner {
         align-items: center !important;
         padding-right: 20px !important;
+        margin-top: 15px !important;
       }
 
       .v-icon::before {
