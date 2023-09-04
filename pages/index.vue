@@ -176,7 +176,7 @@
           lazy-validation
         >
           <div class="form-group pt-16 pb-5">
-            <v-col class="form-field" justify="center" align="left">
+            <v-col class="form-field input-field" justify="center" align="left">
               <label for="fullname">Name & Surname</label>
               <v-text-field
                 id="fullname"
@@ -185,7 +185,7 @@
                 required
               ></v-text-field>
             </v-col>
-            <v-col class="form-field" justify="center" align="left">
+            <v-col class="form-field input-field" justify="center" align="left">
               <label for="fullname">Email</label>
               <v-text-field
                 id="email"
@@ -196,7 +196,7 @@
             </v-col>
           </div>
           <div class="form-group pb-10">
-            <v-col class="form-field" justify="center" align="left">
+            <v-col class="form-field input-field" justify="center" align="left">
               <label for="phone">Phone</label>
               <v-text-field
                 id="phone"
@@ -519,6 +519,81 @@
     }
   }
 
+  .input-field {
+    .v-input {
+
+      .v-input__slot {
+        input {
+          max-height: 50px !important;
+          height: 50px !important;
+          color: #303644;
+          background-color: #ffffff;
+          padding-left: 20px;
+          font-size: 16px;
+          border-radius: 50px;
+          border: solid #303644;
+          border-width: 2px 2px 6px 6px;
+        }
+      }
+    }
+  }
+
+  .v-input {
+    .v-input__slot::before  {
+      border-color: transparent !important;
+    }
+
+    .v-select__slot {
+      max-height: 50px !important;
+      height: 50px !important;
+      background-color: #ffffff;
+      padding-left: 20px;
+      font-size: 16px;
+      border-radius: 50px;
+      border: solid #303644;
+      border-width: 2px 2px 6px 6px;
+
+      .v-input__append-inner {
+        align-items: center !important;
+        padding-right: 20px !important;
+      }
+
+      .v-icon::before {
+        color: #303644 !important;
+      }
+
+      .v-select__selection {
+        color: #303644 !important;
+      }
+    }
+  }
+
+  .submit-btn {
+    padding: 30px 20px !important;
+    color: #303644 !important;
+    background-color: #F9BB32 !important;
+    font-size: 16px !important;
+    border-radius: 50px !important;
+    border: solid #303644 !important;
+    border-width: 2px 2px 6px 6px !important;
+    width: 250px;
+  }
+
+  .date-btn {
+    width: 250px;
+    padding: 30px 20px !important;
+    color: #303644 !important;
+    background-color: #ffffff !important;
+    font-size: 16px !important;
+    border-radius: 50px !important;
+    border: solid #303644 !important;
+    border-width: 2px 2px 6px 6px !important;
+
+    img {
+      padding-right: 20px;
+    }
+  }
+
   .card {
     background-color: #FACA92 !important;
     border-radius: 30px !important;
@@ -607,7 +682,7 @@
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      margin-right: 40px;
+      // margin-right: 40px;
     }
   }
 
@@ -616,7 +691,7 @@
     font-family: 'cfastystd-bold-webfont', sans-serif;
     font-size: 18px !important;
     text-transform: uppercase;
-    margin: 0 !important;
+    margin: 0 30px !important;
   }
 
   .footer {
@@ -677,6 +752,10 @@
         justify-content: center;
         align-items: center;
       }
+    }
+
+    .divider {
+      margin: 30px 0 !important;
     }
   }
 
