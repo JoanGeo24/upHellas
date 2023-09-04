@@ -1,0 +1,27 @@
+/* FreeScript-Bold */
+@font-face {
+    font-family: 'FreeScript-Bold';
+    src: url('../static/fonts/FreeScript-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  /* cfastystd-bold-webfont */
+  @font-face {
+    font-family: 'cfastystd-bold-webfont';
+    src: url('../static/fonts/cfastystd-bold-webfont.woff') format('woff'),
+         url('../static/fonts/cfastystd-bold-webfont.woff2') format('woff2'),
+         url('../static/fonts/cfastystd-bold-webfont.eot') format('eot');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  /* cfastystd-light-webfont */
+  @font-face {
+    font-family: 'cfastystd-light-webfont';
+    src: url('../static/fonts/cfastystd-light-webfont.woff2') format('woff2'),
+         url('../static/fonts/cfastystd-light-webfont.woff') format('woff'),
+         url('../static/fonts/cfastystd-light-webfont.eot') format('eot');
+    font-weight: normal;
+    font-style: normal;
+  }
