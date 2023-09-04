@@ -169,49 +169,53 @@
     <testimonials></testimonials>
     <v-col :class="$vuetify.breakpoint.lgAndUp ? 'pa-16' : ''" justify="center" align="center" cols="12" class="section__form" ref="contactUsSection">
       <h1 class="section__form-title">I am interested in getting the benefits of <span>Up Hellas</span></h1>
-      <v-form
-        ref="form"
-        v-model="valid"
-        lazy-validation
-      >
-        <div class="form-group py-16">
-          <div class="form-field">
-            <label for="fullname">Name & Surname</label>
-            <v-text-field
-              id="fullname"
-              v-model="fullname"
-              :rules="nameRules"
-              required
-            ></v-text-field>
+      <v-col justify="center" align="center" class="pa-0" :cols="$vuetify.breakpoint.mdAndUp ? '8' : '11'">
+        <v-form
+          ref="form"
+          v-model="valid"
+          lazy-validation
+        >
+          <div class="form-group pt-16 pb-5" :class="$vuetify.breakpoint.mdAndUp ? 'mr-10' : ''">
+            <div class="form-field">
+              <label for="fullname">Name & Surname</label>
+              <v-text-field
+                id="fullname"
+                v-model="fullname"
+                :rules="nameRules"
+                required
+              ></v-text-field>
+            </div>
+            <div class="form-field">
+              <label for="fullname">Email</label>
+              <v-text-field
+                id="email"
+                v-model="email"
+                :rules="emailRules"
+                required
+              ></v-text-field>
+            </div>
           </div>
-          <div class="form-field">
-            <label for="fullname">Email</label>
-            <v-text-field
-              id="email"
-              v-model="email"
-              :rules="emailRules"
-              required
-            ></v-text-field>
-          </div>
-          <div class="form-field">
-            <label for="phone">Phone</label>
-            <v-text-field
-              id="phone"
-              v-model="phone"
-              :rules="phoneRules"
-              :counter="10"
-              required
-            ></v-text-field>
-          </div>
-          <div class="form-field">
-            <label for="product">Product</label>
-            <v-select
-              id="product"
-              v-model="selectedProduct"
-              :items="products"
-              :rules="[v => !!v || 'Product is required']"
-              required
-            ></v-select>
+          <div class="form-group pb-10">
+            <div class="form-field">
+              <label for="phone">Phone</label>
+              <v-text-field
+                id="phone"
+                v-model="phone"
+                :rules="phoneRules"
+                :counter="10"
+                required
+              ></v-text-field>
+            </div>
+            <div class="form-field">
+              <label for="product">Product</label>
+              <v-select
+                id="product"
+                v-model="selectedProduct"
+                :items="products"
+                :rules="[v => !!v || 'Product is required']"
+                required
+              ></v-select>
+            </div>
           </div>
           <div class="form-checkbox">
             <v-checkbox
@@ -225,7 +229,7 @@
           <div class="form-btns">
             <v-btn
               :disabled="!valid"
-              class="mr-4"
+              class="submit-btn"
               @click="submit"
             >
               send us your message
@@ -240,7 +244,8 @@
                 min-width="auto"
               >
                 <template v-slot:activator="{ on }">
-                  <v-btn v-on="on">
+                  <v-btn class="date-btn" v-on="on">
+                    <img src="../static/images/meeting-logo.svg">
                     Pick a Date
                   </v-btn>
                 </template>
@@ -248,8 +253,9 @@
               </v-menu>
             </div>
           </div>
-        </div>
-      </v-form>
+        </v-form>
+        <div class="footer">Created by Ioanna Georgiadou</div>
+      </v-col>
     </v-col>
   </v-row>
 </template>
@@ -575,12 +581,31 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+      justify-content: center;
+
+      label {
+        color: #303644 !important;
+        font-family: 'cfastystd-bold-webfont', sans-serif;
+        font-size: 14px !important;
+        text-transform: uppercase;
+      }
     }
 
     &-checkbox {
       display: flex;
       flex-direction: row;
       justify-content: center;
+      align-items: center;
+      margin-bottom: 40px;
+      width: 50%;
+
+      label {
+        color: #303644 !important;
+        font-family: 'cfastystd-light-webfont', sans-serif;
+        font-size: 12px !important;
+        text-align: left;
+        font-weight: 700;
+      }
     }
 
     &-btns {
@@ -588,11 +613,24 @@
       flex-direction: row;
       justify-content: center;
       align-items: center;
+      margin-right: 40px;
     }
   }
 
   .divider {
-    margin: 0 40px !important;
+    color: #303644 !important;
+    font-family: 'cfastystd-bold-webfont', sans-serif;
+    font-size: 18px !important;
+    text-transform: uppercase;
+    margin: 0 !important;
+  }
+
+  .footer {
+    margin-top: 50px;
+    font-family: 'FreeScript-Bold', sans-serif;
+    font-size: 24px;
+    color: #F79018 !important;
+    text-shadow: -5px 0 #303644;
   }
 
   @media only screen and (max-width: 960px) {
@@ -628,6 +666,30 @@
             flex-direction: column;
           }
         }
+      }
+    }
+
+    .form {
+      &-group {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      &-field {
+        margin: 0 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+      }
+
+      &-btns {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
       }
     }
   }
