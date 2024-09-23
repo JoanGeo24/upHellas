@@ -4,11 +4,6 @@
   </v-app>
 </template>
 
-<style lang="scss">
-  .component {
-    background-color: #F79018;
-  }
-</style>
 <script>
 export default {
   name: 'DefaultLayout',
@@ -18,3 +13,8 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+  .component {
+    background-color: #F79018;
+  }
+</style>
