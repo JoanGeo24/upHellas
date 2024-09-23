@@ -79,5 +79,11 @@ export default {
   // Add the router base for GitHub Pages
   router: {
     base: '/upHellas/'
+  },
+  generate: {
+    fallback: true,
+    routes: [
+      '/'
+    ]
   }
 }

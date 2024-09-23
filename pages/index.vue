@@ -6,29 +6,75 @@
       </header>
     </v-col>
     <div class="section">
-      <v-col :class="$vuetify.breakpoint.lgAndUp ? 'pl-16' : ''" class="py-0 mt-6 section--left" justify="center" align="left" cols="12" sm="12" md="6">
+      <v-col
+        :class="$vuetify.breakpoint.lgAndUp ? 'pl-16' : ''"
+        class="py-0 mt-6 section--left"
+        justify="center"
+        align="left"
+        cols="12"
+        sm="12"
+        md="6"
+      >
         <img class="badge mt-4" src="../static/images/5-badge.svg">
-        <h1 class="section__title">Here's a <br> crazy thought</h1>
-        <p class="section__paragraph">Happy & healthy employees work better!</p>
-        <button class="section__btn" @click="scrollToCardsSection">Find out how we can help</button>
+        <h1 class="section__title">
+          Here's a <br> crazy thought
+        </h1>
+        <p class="section__paragraph">
+          Happy & healthy employees work better!
+        </p>
+        <button class="section__btn" @click="scrollToCardsSection">
+          Find out how we can help
+        </button>
       </v-col>
-      <v-col :class="$vuetify.breakpoint.lgAndUp ? 'pr-16' : ''" class="py-0 pl-0" justify="center" align="center" cols="12" sm="12" md="6">
-          <img class="section__img" src="../static/images/banner-image.png">
+      <v-col
+        :class="$vuetify.breakpoint.lgAndUp ? 'pr-16' : ''"
+        class="py-0 pl-0"
+        justify="center"
+        align="center"
+        cols="12"
+        sm="12"
+        md="6"
+      >
+        <img class="section__img" src="../static/images/banner-image.png">
       </v-col>
     </div>
-    <v-col :class="$vuetify.breakpoint.lgAndUp ? 'px-16' : ''" class="py-0" justify="center" align="center" cols="12" sm="12" md="6">
-      <p class="ma-0 section__scroll">Scroll for more</p>
-      <v-icon class="section__scroll-icon">mdi-chevron-down</v-icon>
+    <v-col
+      :class="$vuetify.breakpoint.lgAndUp ? 'px-16' : ''"
+      class="py-0"
+      justify="center"
+      align="center"
+      cols="12"
+      sm="12"
+      md="6"
+    >
+      <p class="ma-0 section__scroll">
+        Scroll for more
+      </p>
+      <v-icon class="section__scroll-icon">
+        mdi-chevron-down
+      </v-icon>
     </v-col>
     <v-col :class="$vuetify.breakpoint.lgAndUp ? 'px-16' : ''" class="py-0 mt-16" justify="center" align="center" cols="12">
-      <p class="section__second-title px-6">Happy & healthy employees work better! &#128153;</p>
-      <p class="section__second-subinfo px-6">We are Up. We design and deliver digital-first employee benefits that transform the workplace experience.</p>
+      <p class="section__second-title px-6">
+        Happy & healthy employees work better! &#128153;
+      </p>
+      <p class="section__second-subinfo px-6">
+        We are Up. We design and deliver digital-first employee benefits that transform the workplace experience.
+      </p>
     </v-col>
-    <v-col :class="$vuetify.breakpoint.lgAndUp ? 'px-16' : ''" class="py-0 my-16 section__second-cards" justify="center" align="center" cols="12" ref="cardsSection">
+    <v-col
+      ref="cardsSection"
+      :class="$vuetify.breakpoint.lgAndUp ? 'px-16' : ''"
+      class="py-0 my-16 section__second-cards"
+      justify="center"
+      align="center"
+      cols="12"
+    >
       <v-card
         v-for="(card, index) in cardImages"
         :key="index"
-        :class="{'mx-3 my-12 card': true, 'hovered-card': card.isHovered}"        width="320"
+        :class="{'mx-3 my-12 card': true, 'hovered-card': card.isHovered}"
+        width="320"
         height="510"
         @mouseover="isHovered(index)"
         @mouseout="isNotHovered(index)"
@@ -38,22 +84,24 @@
             max-width="250"
             :src="card.titleImg"
             class="card__title-image"
-          ></v-img>
+          />
 
-          <v-card-text class="card__title-text">{{ card.title }}</v-card-text>
+          <v-card-text class="card__title-text">
+            {{ card.title }}
+          </v-card-text>
 
           <v-img
             height="250"
             :src="card.img"
             class="card__image"
-          ></v-img>
+          />
 
           <v-card-actions>
             <v-btn
               text
-              @click="scrollToTellMeMoreSection"
               class="card__button"
               :class="{ 'show-button': card.isHovered }"
+              @click="scrollToTellMeMoreSection"
             >
               Learn More
             </v-btn>
@@ -62,113 +110,212 @@
       </v-card>
     </v-col>
     <div class="section section__third section__benefits">
-      <v-col :class="$vuetify.breakpoint.lgAndUp ? 'pl-16' : ''" class="section--left" justify="center" align="center" cols="12" sm="12" md="6">
-        <h1 class="section__title">The unrivalled meal <br> card solution</h1>
+      <v-col
+        :class="$vuetify.breakpoint.lgAndUp ? 'pl-16' : ''"
+        class="section--left"
+        justify="center"
+        align="center"
+        cols="12"
+        sm="12"
+        md="6"
+      >
+        <h1 class="section__title">
+          The unrivalled meal <br> card solution
+        </h1>
         <v-card
           class="section__benefits-card"
           max-width="650"
           min-width="300"
         >
-        <div :class="$vuetify.breakpoint.lgAndUp ? 'ml-7' : 'ml-2'" class="my-3 mr-2">
-          <div class="section__benefits-card-title">
-            <img
-              max-width="250"
-              src="../static/images/go-for-eat.svg"
-              :class="$vuetify.breakpoint.mdAndDown ? 'mb-3' : ''"
-            >
-            <p class="chip" :class="$vuetify.breakpoint.mdAndDown ? 'mb-3' : ''"
->Meal card</p>
-            <img
-              height="100"
-              src="../static/images/card.png"
-            >
+          <div :class="$vuetify.breakpoint.lgAndUp ? 'ml-7' : 'ml-2'" class="my-3 mr-2">
+            <div class="section__benefits-card-title">
+              <img
+                max-width="250"
+                src="../static/images/go-for-eat.svg"
+                :class="$vuetify.breakpoint.mdAndDown ? 'mb-3' : ''"
+              >
+              <p
+                class="chip"
+                :class="$vuetify.breakpoint.mdAndDown ? 'mb-3' : ''"
+              >
+                Meal card
+              </p>
+              <img
+                height="100"
+                src="../static/images/card.png"
+              >
+            </div>
+
+            <v-card-text class="section__benefits-title">
+              Enjoy your meals anywhere you want
+            </v-card-text>
+
+            <v-card-text class="section__benefits-text">
+              Our prepaid meal card by Mastercard is designed to offer to both our corporate customers and users an unmatched experience that's simple & fun.
+            </v-card-text>
+
+            <v-card-text class="section__benefits-text--tip">
+              Tax exemption: 6 euros per day / 1,452 euros per year per employee
+            </v-card-text>
+
+            <div class="section__benefits-text--list">
+              <p class="title">
+                Benefits
+              </p>
+              <p class="list--item">
+                <v-icon class="icon">
+                  mdi-check-bold
+                </v-icon> Order & load cards online in seconds, download invoices & reports in a click
+              </p>
+              <p class="list--item">
+                <v-icon class="icon">
+                  mdi-check-bold
+                </v-icon> Best in class service: Quantified & qualified with a monthly report
+              </p>
+              <p class="list--item">
+                <v-icon class="icon">
+                  mdi-check-bold
+                </v-icon> Our cards are accepted everywhere in Greece
+              </p>
+              <p class="list--item">
+                <v-icon class="icon">
+                  mdi-check-bold
+                </v-icon> Use our app for full control & mobile payments
+              </p>
+            </div>
           </div>
-
-          <v-card-text class="section__benefits-title">Enjoy your meals anywhere you want</v-card-text>
-
-          <v-card-text class="section__benefits-text">Our prepaid meal card by Mastercard is designed to offer to both our corporate customers and users an unmatched experience that's simple & fun.</v-card-text>
-
-          <v-card-text class="section__benefits-text--tip">Tax exemption: 6 euros per day / 1,452 euros per year per employee</v-card-text>
-
-          <div class="section__benefits-text--list">
-            <p class="title">Benefits</p>
-            <p class="list--item"><v-icon class="icon">mdi-check-bold</v-icon> Order & load cards online in seconds, download invoices & reports in a click</p>
-            <p class="list--item"><v-icon class="icon">mdi-check-bold</v-icon> Best in class service: Quantified & qualified with a monthly report</p>
-            <p class="list--item"><v-icon class="icon">mdi-check-bold</v-icon> Our cards are accepted everywhere in Greece</p>
-            <p class="list--item"><v-icon class="icon">mdi-check-bold</v-icon> Use our app for full control & mobile payments</p>
-          </div>
-        </div>
 
           <v-card-actions class="section__third-action section__benefits-action">
             <button
-              @click="scrollToTellMeMoreSection"
               class="section__third-btn section__benefits-btn"
+              @click="scrollToTellMeMoreSection"
             >
-              Contact us 
-              <v-icon class="icon">mdi-arrow-right-bold-outline</v-icon>
+              Contact us
+              <v-icon class="icon">
+                mdi-arrow-right-bold-outline
+              </v-icon>
             </button>
           </v-card-actions>
         </v-card>
       </v-col>
-      <v-col :class="$vuetify.breakpoint.lgAndUp ? 'pr-16' : ''" justify="center" align="center" cols="12" sm="12" md="6">
+      <v-col
+        :class="$vuetify.breakpoint.lgAndUp ? 'pr-16' : ''"
+        justify="center"
+        align="center"
+        cols="12"
+        sm="12"
+        md="6"
+      >
         <img class="section__img" src="../static/images/goforeat.png">
       </v-col>
     </div>
     <div class="section section__fourth section__benefits">
-      <v-col :class="$vuetify.breakpoint.lgAndUp ? 'pr-16' : ''" justify="center" align="center" cols="12" sm="12" md="6">
+      <v-col
+        :class="$vuetify.breakpoint.lgAndUp ? 'pr-16' : ''"
+        justify="center"
+        align="center"
+        cols="12"
+        sm="12"
+        md="6"
+      >
         <img class="section__img" src="../static/images/upgift.png">
       </v-col>
-      <v-col :class="$vuetify.breakpoint.lgAndUp ? 'pl-16' : ''" class="section--left" justify="center" align="center" cols="12" sm="12" md="6">
-        <h1 class="section__title">The perfect gift</h1>
+      <v-col
+        :class="$vuetify.breakpoint.lgAndUp ? 'pl-16' : ''"
+        class="section--left"
+        justify="center"
+        align="center"
+        cols="12"
+        sm="12"
+        md="6"
+      >
+        <h1 class="section__title">
+          The perfect gift
+        </h1>
         <v-card
           class="section__benefits-card"
           max-width="650"
           min-width="300"
         >
-        <div :class="$vuetify.breakpoint.lgAndUp ? 'ml-7' : 'ml-2'" class="my-3 mr-2">
-          <div class="section__benefits-card-title">
-            <img
-              max-width="250"
-              src="../static/images/UP-GIFT.svg"
-              :class="$vuetify.breakpoint.mdAndDown ? 'mb-3' : ''"
-            >
-            <p class="chip" :class="$vuetify.breakpoint.mdAndDown ? 'mb-3' : ''"
->Meal card</p>
-            <img
-              height="100"
-              src="../static/images/card2.png"
-            >
+          <div :class="$vuetify.breakpoint.lgAndUp ? 'ml-7' : 'ml-2'" class="my-3 mr-2">
+            <div class="section__benefits-card-title">
+              <img
+                max-width="250"
+                src="../static/images/UP-GIFT.svg"
+                :class="$vuetify.breakpoint.mdAndDown ? 'mb-3' : ''"
+              >
+              <p
+                class="chip"
+                :class="$vuetify.breakpoint.mdAndDown ? 'mb-3' : ''"
+              >
+                Meal card
+              </p>
+              <img
+                height="100"
+                src="../static/images/card2.png"
+              >
+            </div>
+
+            <v-card-text class="section__benefits-title">
+              Everything you desire in a single tap
+            </v-card-text>
+
+            <v-card-text class="section__benefits-text">
+              Our reloadable gift card is the perfect gift to reward, to incentivise, to celebrate!
+            </v-card-text>
+
+            <v-card-text class="section__benefits-text--tip">
+              Tax exemption: 300 euros per year per employee
+            </v-card-text>
+
+            <div class="section__benefits-text--list">
+              <p class="title">
+                Benefits
+              </p>
+              <p class="list--item">
+                <v-icon class="icon">
+                  mdi-check-bold
+                </v-icon> Order & load cards online in seconds, download invoices & reports in a click
+              </p>
+              <p class="list--item">
+                <v-icon class="icon">
+                  mdi-check-bold
+                </v-icon> Buy everything you want - electronics, clothing, cosmetics and so much more
+              </p>
+              <p class="list--item">
+                <v-icon class="icon">
+                  mdi-check-bold
+                </v-icon> Our app is loaded with crazy-fun features
+              </p>
+            </div>
           </div>
-
-          <v-card-text class="section__benefits-title">Everything you desire in a single tap</v-card-text>
-
-          <v-card-text class="section__benefits-text">Our reloadable gift card is the perfect gift to reward, to incentivise, to celebrate!</v-card-text>
-
-          <v-card-text class="section__benefits-text--tip">Tax exemption: 300 euros per year per employee</v-card-text>
-
-          <div class="section__benefits-text--list">
-            <p class="title">Benefits</p>
-            <p class="list--item"><v-icon class="icon">mdi-check-bold</v-icon> Order & load cards online in seconds, download invoices & reports in a click</p>
-            <p class="list--item"><v-icon class="icon">mdi-check-bold</v-icon> Buy everything you want - electronics, clothing, cosmetics and so much more</p>
-            <p class="list--item"><v-icon class="icon">mdi-check-bold</v-icon> Our app is loaded with crazy-fun features</p>
-          </div>
-        </div>
 
           <v-card-actions class="section__fourth-action section__benefits-action">
             <button
-              @click="scrollToTellMeMoreSection"
               class="section__fourth-btn section__benefits-btn"
+              @click="scrollToTellMeMoreSection"
             >
-              Tell me more 
-              <v-icon class="icon">mdi-arrow-right-bold-outline</v-icon>
+              Tell me more
+              <v-icon class="icon">
+                mdi-arrow-right-bold-outline
+              </v-icon>
             </button>
           </v-card-actions>
         </v-card>
       </v-col>
     </div>
-    <testimonials></testimonials>
-    <v-col :class="$vuetify.breakpoint.lgAndUp ? 'pa-16' : ''" justify="center" align="center" cols="12" class="section__form" ref="contactUsSection">
-      <h1 class="section__form-title">I am interested in getting the benefits of <span>Up Hellas</span></h1>
+    <testimonials />
+    <v-col
+      ref="contactUsSection"
+      :class="$vuetify.breakpoint.lgAndUp ? 'pa-16' : ''"
+      justify="center"
+      align="center"
+      cols="12"
+      class="section__form"
+    >
+      <h1 class="section__form-title">
+        I am interested in getting the benefits of <span>Up Hellas</span>
+      </h1>
       <v-col justify="center" align="center" class="pa-0" :cols="$vuetify.breakpoint.mdAndUp ? '7' : '12'">
         <v-form
           ref="form"
@@ -183,7 +330,7 @@
                 v-model="fullname"
                 :rules="nameRules"
                 required
-              ></v-text-field>
+              />
             </v-col>
             <v-col class="form-field input-field" justify="center" align="left">
               <label for="fullname">Email</label>
@@ -192,7 +339,7 @@
                 v-model="email"
                 :rules="emailRules"
                 required
-              ></v-text-field>
+              />
             </v-col>
           </div>
           <div class="form-group pb-10">
@@ -204,7 +351,7 @@
                 :rules="phoneRules"
                 :counter="10"
                 required
-              ></v-text-field>
+              />
             </v-col>
             <v-col class="form-field" justify="center" align="left">
               <label for="product">Product</label>
@@ -214,7 +361,7 @@
                 :items="products"
                 :rules="[v => !!v || 'Product is required']"
                 required
-              ></v-select>
+              />
             </v-col>
           </div>
           <div class="form-checkbox">
@@ -223,7 +370,7 @@
               v-model="checkbox"
               :rules="[v => !!v || 'You must agree to continue!']"
               required
-            ></v-checkbox>
+            />
             <label for="checkbox">Επιθυμώ να χρησιμοποιηθούν τα παραπάνω στοιχεία μου από την Up Hellas, προκειμένου να ενημερωθώ για τα προϊόντα της, βάσει και του Γενικού Κανονισμού για την Προστασία Προσωπικών Δεδομένων που ισχ'υει από 25/5/2018</label>
           </div>
           <div class="form-btns">
@@ -234,7 +381,9 @@
             >
               send us your message
             </v-btn>
-            <p class="divider">or</p>
+            <p class="divider">
+              or
+            </p>
             <div class="pa-0 ma-0 section__second-cards">
               <v-menu
                 v-model="datePickerVisible"
@@ -243,22 +392,173 @@
                 offset-y
                 min-width="auto"
               >
-                <template v-slot:activator="{ on }">
+                <template #activator="{ on }">
                   <v-btn :disabled="!valid" class="date-btn" v-on="on">
                     <img src="../static/images/meeting-logo.svg">
                     Pick a Date
                   </v-btn>
                 </template>
-                <v-date-picker v-model="selectedDate" @input="saveSelectedDateAndClose" :min="minDate"></v-date-picker>
+                <v-date-picker v-model="selectedDate" :min="minDate" @input="saveSelectedDateAndClose" />
               </v-menu>
             </div>
           </div>
         </v-form>
-        <div class="footer">Created by Ioanna Georgiadou</div>
+        <div class="footer">
+          Created by Ioanna Georgiadou
+        </div>
       </v-col>
     </v-col>
   </v-row>
 </template>
+<script>
+import testimonials from '~/components/testimonials.vue'
+
+export default {
+  name: 'IndexPage',
+  components: {
+    'my-component': testimonials
+  },
+  data () {
+    return {
+      cardsInfo: [
+        {
+          titleImg: 'go-for-eat.svg',
+          title: 'The unrivalled meal card solution',
+          img: '1.png',
+          isHovered: false
+        },
+        {
+          titleImg: 'UP-GIFT.svg',
+          title: 'The perfect gift',
+          img: '2.png',
+          isHovered: false
+        },
+        {
+          titleImg: 'up-cheque.svg',
+          title: 'Where it all started; our meal vouchers',
+          img: '3.png',
+          isHovered: false
+        },
+        {
+          titleImg: 'up-holidays.svg',
+          title: 'The card that takes you places',
+          img: '4.png',
+          isHovered: false
+        },
+        {
+          titleImg: 'up-fit.svg',
+          title: 'The multi-gym membership',
+          img: '5.png',
+          isHovered: false
+        }
+      ],
+      valid: true,
+      fullname: '',
+      email: '',
+      phone: '',
+      selectedProduct: null,
+      products: [
+        'Up Go for Eat',
+        'Up Gift',
+        'Up Cheque Dejeuner',
+        'Up Holidays',
+        'Up Fit'
+      ],
+      checkbox: false,
+      nameRules: [
+        v => !!v || 'Name is required'
+      ],
+      emailRules: [
+        v => !!v || 'E-mail is required',
+        v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
+      ],
+      phoneRules: [
+        v => !!v || 'Phone is required',
+        v => /^[0-9]+$/.test(v) || 'Phone must contain only numbers',
+        v => (v && v.length === 10) || 'Phone must be exactly 10 digits long',
+        v => (v && v.startsWith('69')) || 'Phone must start with "69"'
+      ],
+      datePickerVisible: false,
+      selectedDate: null
+    }
+  },
+  computed: {
+    cardImages () {
+      return this.cardsInfo.map(card => ({
+        titleImg: require(`~/static/images/${card.titleImg}`),
+        title: card.title,
+        img: require(`~/static/images/${card.img}`),
+        isHovered: card.isHovered
+      }))
+    },
+    minDate () {
+      const currentDate = new Date()
+      const year = currentDate.getFullYear()
+      const month = (currentDate.getMonth() + 1).toString().padStart(2, '0')
+      const day = currentDate.getDate().toString().padStart(2, '0')
+      return `${year}-${month}-${day}`
+    }
+  },
+  methods: {
+    isHovered (index) {
+      this.cardsInfo[index].isHovered = true
+    },
+    isNotHovered (index) {
+      this.cardsInfo[index].isHovered = false
+    },
+    scrollToCardsSection () {
+      const cardsSection = this.$refs.cardsSection
+
+      if (cardsSection) {
+        const yOffset = cardsSection.offsetTop
+        window.scrollTo({ top: yOffset, behavior: 'smooth' })
+      }
+    },
+    scrollToTellMeMoreSection () {
+      const contactUsSection = this.$refs.contactUsSection
+
+      if (contactUsSection) {
+        const yOffset = contactUsSection.offsetTop
+        window.scrollTo({ top: yOffset, behavior: 'smooth' })
+      }
+    },
+    submit () {
+      this.$refs.form.validate()
+      let payload = {}
+      if (this.selectedDate !== null) {
+        payload = {
+          fullname: this.fullname,
+          email: this.email,
+          phone: this.phone,
+          product: this.selectedProduct,
+          checkbox: this.checkbox,
+          selectedDate: this.selectedDate
+        }
+      } else {
+        payload = {
+          fullname: this.fullname,
+          email: this.email,
+          phone: this.phone,
+          product: this.selectedProduct,
+          checkbox: this.checkbox
+        }
+      }
+
+      console.log(payload)
+      // then we make the post or patch call to send the data of the form with a promise if success show success message else show error
+    },
+    openDatePicker () {
+      this.datePickerVisible = true
+    },
+    saveSelectedDateAndClose () {
+      this.datePickerVisible = false
+      console.log('Selected date:', this.selectedDate)
+      this.submit()
+    }
+  }
+}
+</script>
+
 <style lang="scss">
   .logo {
     height: 150px;
@@ -438,7 +738,7 @@
             padding: 1px;
             font-size: 15px !important;
             border-radius: 50% !important;
-            border: 2px solid #303644;          
+            border: 2px solid #303644;
           }
         }
       }
@@ -772,152 +1072,3 @@
     }
   }
 </style>
-
-<script>
-import testimonials from '~/components/testimonials.vue';
-
-export default {
-  name: 'IndexPage',
-  components: {
-    'my-component': testimonials,
-  },
-  data () {
-    return {
-      cardsInfo: [
-        {
-          titleImg: 'go-for-eat.svg',
-          title: 'The unrivalled meal card solution',
-          img: '1.png',
-          isHovered: false,
-        },
-        {
-          titleImg: 'UP-GIFT.svg',
-          title: 'The perfect gift',
-          img: '2.png',
-          isHovered: false,
-        },
-        {
-          titleImg: 'up-cheque.svg',
-          title: 'Where it all started; our meal vouchers',
-          img: '3.png',
-          isHovered: false,
-        },
-        {
-          titleImg: 'up-holidays.svg',
-          title: 'The card that takes you places',
-          img: '4.png',
-          isHovered: false,
-        },
-        {
-          titleImg: 'up-fit.svg',
-          title: 'The multi-gym membership',
-          img: '5.png',
-          isHovered: false,
-        }
-      ],
-      valid: true,
-      fullname: "",
-      email: "",
-      phone: "",
-      selectedProduct: null,
-      products: [
-        'Up Go for Eat',
-        'Up Gift',
-        'Up Cheque Dejeuner',
-        'Up Holidays',
-        'Up Fit'
-      ],
-      checkbox: false,
-      nameRules: [
-        v => !!v || 'Name is required',
-      ],
-      emailRules: [
-        v => !!v || 'E-mail is required',
-        v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
-      ],
-      phoneRules: [
-        v => !!v || 'Phone is required',
-        v => /^[0-9]+$/.test(v) || 'Phone must contain only numbers',
-        v => (v && v.length === 10) || 'Phone must be exactly 10 digits long',
-        v => (v && v.startsWith('69')) || 'Phone must start with "69"',
-      ],
-      datePickerVisible: false, 
-      selectedDate: null,
-    }
-  },
-  methods: {
-    isHovered(index) {
-      this.cardsInfo[index].isHovered = true;
-    },
-    isNotHovered(index) {
-      this.cardsInfo[index].isHovered = false;
-    },
-    scrollToCardsSection() {
-      const cardsSection = this.$refs.cardsSection;
-
-      if (cardsSection) {
-        const yOffset = cardsSection.offsetTop;
-        window.scrollTo({ top: yOffset, behavior: 'smooth' });
-      }
-    },
-    scrollToTellMeMoreSection() {
-      const contactUsSection = this.$refs.contactUsSection;
-
-      if (contactUsSection) {
-        const yOffset = contactUsSection.offsetTop;
-        window.scrollTo({ top: yOffset, behavior: 'smooth' });
-      }
-    },
-    submit () {
-      this.$refs.form.validate();
-      let payload = {};
-      if (this.selectedDate !== null) {
-        payload = {
-          fullname: this.fullname,
-          email: this.email,
-          phone: this.phone,
-          product: this.selectedProduct,
-          checkbox: this.checkbox,
-          selectedDate: this.selectedDate
-        };
-      } else {
-        payload = {
-          fullname: this.fullname,
-          email: this.email,
-          phone: this.phone,
-          product: this.selectedProduct,
-          checkbox: this.checkbox
-        };
-      }
-
-      console.log(payload);
-      //then we make the post or patch call to send the data of the form with a promise if success show success message else show error
-    },
-    openDatePicker() {
-      this.datePickerVisible = true;
-    },
-    saveSelectedDateAndClose() {
-      this.datePickerVisible = false;
-      console.log("Selected date:", this.selectedDate);
-      this.submit();
-    },
-  },
-  computed: {
-    cardImages() {
-      return this.cardsInfo.map((card) => ({
-        titleImg: require(`~/static/images/${card.titleImg}`),
-        title: card.title,
-        img: require(`~/static/images/${card.img}`),
-        isHovered: card.isHovered,
-      }));
-    },
-    minDate() {
-      const currentDate = new Date();
-      const year = currentDate.getFullYear();
-      const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
-      const day = currentDate.getDate().toString().padStart(2, '0');
-      return `${year}-${month}-${day}`;
-    },
-  },
-}
-</script>
